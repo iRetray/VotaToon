@@ -6,6 +6,25 @@ table#estiloSombra1 {
 	box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
 }
 
+table#home {
+  width: 100%;
+}
+
+tr#general {
+  width: 95%;
+}
+
+td#central {
+  width: 35%;
+}
+
+td#left {
+  width: 25%;
+}
+
+td#right {
+  width: 25%;
+}
 //Grid 
 .item1 { grid-area: header; }
 .item2 { grid-area: menu; }
