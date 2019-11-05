@@ -1,5 +1,10 @@
-table#estiloSombra1 {
+@import url('https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+table#estiloSombra {
 	align-content: center;
+  padding: 20px;
+  margin: 15px;
 
 	-webkit-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
 	-moz-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
@@ -49,3 +54,52 @@ td#right {
   padding: 20px 0;
   font-size: 30px;
 }
+
+p#textos {
+  font-family: 'Hepta Slab', serif;
+  font-size: 15px;
+}
+
+p#titulos {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 45px;
+}
+
+input#texto {
+    margin-top: 10px;
+    padding: 15px;
+    width: 70%;
+    font-size: 15px;
+    font-family: 'Hepta Slab', serif;
+    border: 3px solid #5b2e90;
+    border-radius: 5px;
+}
+
+input#submit {
+    margin-top: 10px;
+    padding: 15px;
+    width: 70%;
+    font-size: 15px;
+    font-family: 'Hepta Slab', serif;
+    background-color: #5b2e90;
+    color: white;
+    
+    
+}
+
+input#submit:hover {
+    margin-top: 10px;
+    padding: 15px;
+    width: 70%;
+    font-size: 15px;
+    font-family: 'Hepta Slab', serif;
+    border: 2px solid #5b2e90;
+    border-radius: 5px;
+    border: 2px solid #2c004b;
+    background-color: #2c004b;
+    border-radius: 5px;
+    color: white;
+    
+}
+
+
