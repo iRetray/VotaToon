@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 
 table#estiloSombra {
+  width: 95%;
 	align-content: center;
   padding: 20px;
   margin: 15px;
@@ -13,6 +14,10 @@ table#estiloSombra {
 
 table#home {
   width: 100%;
+}
+
+img#header {
+  width: 40%;
 }
 
 tr#general {
