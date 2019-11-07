@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
 .bodyStyle {
   background-color: #cecece; 
@@ -27,6 +28,10 @@ table#home {
 
 img#header {
   width: 40%;
+}
+
+img#crear {
+  width: 50%;
 }
 
 img#center {
@@ -84,8 +89,8 @@ p#textos {
 }
 
 p#titulos {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 45px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 35px;
 }
 
 input#texto {
@@ -156,6 +161,37 @@ input#submit1:hover {
     border-radius: 5px;
     border: 2px solid #ffb200;
     background-color: #ffb200;
+    color: white;
+    
+}
+
+input#submit2 {
+    margin-top: 10px;
+    padding: 15px;
+    width: 70%;
+    font-size: 20px;
+    font-family: 'Hepta Slab', serif;
+    background-color: #00b300;
+    border: 2px solid #00b300;
+    border-radius: 5px;
+    border-radius: 5px;
+    border: 2px solid #009a00;
+    color: white;
+    
+    
+}
+
+input#submit2:hover {
+    margin-top: 10px;
+    padding: 15px;
+    width: 70%;
+    font-size: 20px;
+    font-family: 'Hepta Slab', serif;
+    border: 2px solid #00b300;
+    border-radius: 5px;
+    border-radius: 5px;
+    border: 2px solid #009a00;
+    background-color: #009a00;
     color: white;
     
 }
