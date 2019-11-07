@@ -30,6 +30,10 @@ img#header {
   width: 40%;
 }
 
+img#calendario {
+  width: 40%;
+}
+
 img#crear {
   width: 50%;
 }
@@ -48,6 +52,7 @@ tr#general {
 
 td#central {
   width: 35%;
+  padding: 50px;
 }
 
 td#left {
@@ -99,7 +104,7 @@ input#texto {
     width: 70%;
     font-size: 15px;
     font-family: 'Hepta Slab', serif;
-    border: 3px solid #5b2e90;
+    border: 3px solid black;
     border-radius: 5px;
 }
 
@@ -109,8 +114,8 @@ input#submit {
     width: 70%;
     font-size: 20px;
     font-family: 'Hepta Slab', serif;
-    background-color: #e500c5;
-    border: 2px solid #e500c5;
+    background-color: black;
+    border: 2px solid black;
     border-radius: 5px;
     border-radius: 5px;
     color: white;
@@ -124,78 +129,14 @@ input#submit:hover {
     width: 70%;
     font-size: 20px;
     font-family: 'Hepta Slab', serif;
-    border: 2px solid #e500c5;
+    border: 2px solid black;
     border-radius: 5px;
     border-radius: 5px;
-    border: 2px solid #cc00af;
-    background-color: #cc00af;
-    
-    color: white;
-    
-}
-
-input#submit1 {
-    margin-top: 10px;
-    padding: 15px;
-    width: 70%;
-    font-size: 20px;
-    font-family: 'Hepta Slab', serif;
-    background-color: #ff9200;
-    border: 2px solid #ff9200;
-    border-radius: 5px;
-    border-radius: 5px;
-    border: 2px solid #ffb200;
-    color: white;
-    
+    border: 2px solid black;
+    background-color: #d0cfcf;
+    color: black;
     
 }
 
-input#submit1:hover {
-    margin-top: 10px;
-    padding: 15px;
-    width: 70%;
-    font-size: 20px;
-    font-family: 'Hepta Slab', serif;
-    border: 2px solid #ff9200;
-    border-radius: 5px;
-    border-radius: 5px;
-    border: 2px solid #ffb200;
-    background-color: #ffb200;
-    color: white;
-    
-}
-
-input#submit2 {
-    margin-top: 10px;
-    padding: 15px;
-    width: 70%;
-    font-size: 20px;
-    font-family: 'Hepta Slab', serif;
-    background-color: #00b300;
-    border: 2px solid #00b300;
-    border-radius: 5px;
-    border-radius: 5px;
-    border: 2px solid #009a00;
-    color: white;
-    
-    
-}
-
-input#submit2:hover {
-    margin-top: 10px;
-    padding: 15px;
-    width: 70%;
-    font-size: 20px;
-    font-family: 'Hepta Slab', serif;
-    border: 2px solid #00b300;
-    border-radius: 5px;
-    border-radius: 5px;
-    border: 2px solid #009a00;
-    background-color: #009a00;
-    color: white;
-    
-}
-
-#ff9200
 
 
