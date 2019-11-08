@@ -22,6 +22,17 @@ table#estiloSombra {
 	box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
 }
 
+table#estiloSombratransparente {
+  width: 95%;
+  align-content: center;
+  padding: 20px;
+  margin: 15px;
+
+  -webkit-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
+  -moz-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
+  box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
+}
+
 table#home {
   width: 100%;
 }
@@ -57,6 +68,25 @@ td#left {
 td#right {
   width: 25%;
 }
+
+td#left1-1 {
+  width: 25%;
+}
+
+td#central1-2 {
+  width: 20%;
+}
+
+td#central1-3 {
+  width: 30%;
+  vertical-align: text-top;
+}
+
+td#right1-4 {
+  width: 25%;
+}
+
+
 
 //Grid 
 .item1 { grid-area: header; }
