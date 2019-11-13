@@ -10,32 +10,36 @@
 <img src="../imagenes/headerLastR.png" id="header" align="center">
 </div>
 <div>
-	<table id="estiloSombra">
+	<table id="estiloSombra" align="center">
 		<tr id="general" align="center">
 			<td id="left">
 				
 			</td>
 			<td>
-				<p>Aqui podrá crear el personero a elegir</p>
+				<p id="titulos">Aqui podrá crear el personero a elegir</p>
 			</td>
 			<td id="right">
 				
 			</td>
 		</tr>
 	</table>
-	<table id="estiloSombratransparente" border="1">
+	<table id="estiloSombratransparente">
 		
 		<tr id="general">
 			<td id="left1-1">
 				
 			</td>
-			<td id="center1-2">
-				<img src="../imagenes/subirfoto.png" height="300px" width="300px">
+			<td id="center1-2" align="center" >
+				<img src="../imagenes/subirfoto.png" height="300px" width="300px" align="center">
 			</td>
-			<td id="central1-3">
-				<p align="center" id="titulos">Datos de Personero</p><br><br><br><br><br>
-				<input type="text" name="nombrepersonero" placeholder="Ingresa aqui su Nombre"><br>
-				<input type="text" name="Edad" placeholder="Ingresa aqui su Edad">
+			<td></td>
+			<td id="central1-3" align="center">
+				<p align="center" id="textos">Datos de Personero</p>
+				<form action="/action_page.php" id="formulariocrearvotacion">
+					<input type="text" name="nombrepersonero" id="nombrepersonero" placeholder="Ingresa aqui su Nombre" class="cajasregistropersonero" required="true"><br>
+					<input type="text" name="Edad" id="Edad" placeholder="Ingresa aqui su Edad" class="cajasregistropersonero" required="true">
+	  				<input type="submit" name="" value="Registrar" id="submit">
+				</form>				
 			</td>
 			<td id="right1-4">
 				

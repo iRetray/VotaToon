@@ -16,6 +16,7 @@ table#estiloSombra {
   padding: 20px;
   margin: 15px;
   background-color: white;
+  border-radius: 20px;
 
 	-webkit-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
 	-moz-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
@@ -27,7 +28,7 @@ table#estiloSombratransparente {
   align-content: center;
   padding: 20px;
   margin: 15px;
-
+  border-radius: 20px;
   -webkit-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
   -moz-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
   box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
@@ -62,16 +63,18 @@ tr#general {
 }
 
 td#central {
-  width: 35%;
+  width: 25%;
   padding: 50px;
 }
 
 td#left {
   width: 25%;
+  padding: 50px;
 }
 
 td#right {
   width: 25%;
+  padding: 50px;
 }
 
 td#left1-1 {
@@ -80,6 +83,17 @@ td#left1-1 {
 
 td#central1-2 {
   width: 20%;
+  background-color: white;
+  width: 95%;
+  align-content: center;
+  padding: 20px;
+  margin: 15px;
+  background-color: white;
+  border-radius: 20px;
+
+  -webkit-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
+  -moz-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
+  box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
 }
 
 td#central1-3 {
@@ -120,7 +134,7 @@ td#right1-4 {
 
 p#textos {
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 p#titulos {
@@ -168,5 +182,14 @@ input#submit:hover {
     
 }
 
+.cajasregistropersonero {
+  margin-top: 10px;
+  padding: 15px;
+  width: 70%;
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  border: 2px solid #0C8D00;
+  border-radius: 5px;
+}
 
 
