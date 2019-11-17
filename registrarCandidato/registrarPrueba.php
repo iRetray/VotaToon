@@ -19,7 +19,7 @@ else{
 }
 */
 
-header("Location:errorNoVotacionActiva.php");
+header("Location:registrar.php");
 
 ?>
 <!DOCTYPE html>

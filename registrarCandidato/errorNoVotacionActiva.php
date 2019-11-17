@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../estilos.css">
 </head>
 <body class="bodyStyle">
+	<center>
 	<table id="estiloSombra" align="center">
 		<tr id="general" align="center">
 			<td id="error">
@@ -15,5 +16,6 @@
 			</td>
 		</tr>	
 	</table>
+	</center>
 </body>
 </html>
