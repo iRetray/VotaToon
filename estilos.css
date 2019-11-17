@@ -67,6 +67,11 @@ td#central {
   padding: 50px;
 }
 
+td#error {
+  width: 80%;
+  padding: 50px;
+}
+
 td#left {
   width: 25%;
   padding: 50px;

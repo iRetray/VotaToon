@@ -1,22 +1,27 @@
 <?php
-session_start();
-$nombre = $_SESSION['nombre'];
-$usuario = $_SESSION['usuario'];
-$tipoUsuario = "";
-switch ($_SESSION['tipoUsuario']) {
-	case 1:
-		$tipoUsuario = "Administrador";
-		break;
-	case 2:
-		$tipoUsuario = "Jefe de inventario";
-		break;
-	case 3:
-		$tipoUsuario = "Almacenista";
-		break;
+include('../conexion.php');
+// Verificar que haya una votacion activa
+/*
+$consulta = "SELECT * FROM `votaciones` WHERE 1";
+$resultado = mysqli_query($conexion, $consulta);
+$hayVotacionActiva = false;
+while ($columna = mysqli_fetch_array( $resultado ))
+{
+	if ($columna['nombreColegio']!="") {
+		$hayVotacionActiva = true;
+	} 
 }
-if($nombre==""){
-	header("Location:../extPages/sesion.php");
+if ($hayVotacionActiva) {
+	header("Location:../errorNoVotacionActiva.php");
 }
+else{
+	header("Location:../registrar.php");
+}
+*/
+
+header("Location:errorNoVotacionActiva.php");
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
