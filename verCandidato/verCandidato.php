@@ -14,11 +14,6 @@ $columna = mysqli_fetch_array( $resultado );
 
 $numeroOpcion = 1;
 
-$consultaFoto = "SELECT foto1 FROM candidatos WHERE 1";
-$result = mysqli_query($conexion, $consultaFoto);
-$result_array = mysql_fetch_array($result);
-header("Content-Type: image/png");
-
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +35,13 @@ header("Content-Type: image/png");
 				<table id="home" align="center">
 					<tr id="general" align="center">
 						<td id="mitad" align="center">
-							<?php echo $result_array[0]; ?>
+							<?php
+								require("../conexion.php");
+								$sql = mysql_query("SELECT * FROM foto1");
+								while ($res = mysql_fetch_array($sql)) {
+									echo "<img src='".$res["foto1"]."'>";
+								}
+							?>
 							
 							<p id="textos"><strong><?php echo $columna['nombre1'] ?></strong></p>
 							<p id="textos"><?php echo $columna['correo1'] ?></p>

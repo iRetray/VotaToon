@@ -14,16 +14,15 @@ copy($rutaFoto1, $destinoFoto1);
 $nombre2 = $_POST['nombre2'];
 $correo2 = $_POST['correo2'];
 $descripcion2 = $_POST['descripcion2'];
-$foto2 = $_POST['foto2'];
 
 $nombreFoto2 = $_FILES['foto2']['name'];
 $rutaFoto2 = $_FILES['foto2']['tmp_name'];
 $destinoFoto2 = "fotos/".$nombreFoto2;
 copy($rutaFoto2, $destinoFoto2);
 
-$plan = $_POST['plan'];
 
-$consulta = "INSERT INTO `candidatos`(`nombre1`, `correo1`, `descripcion1`, 'foto1',`nombre2`, `correo2`, `descripcion2`, 'foto2', `plan`) VALUES ('$nombre1','$correo1','$descripcion1', '$destinoFoto1','$nombre2','$correo2','$descripcion2', '$destinoFoto2','$plan')";
+
+$consulta = "INSERT INTO `candidatos`(`nombre1`, `correo1`, `descripcion1`, `foto1`,`nombre2`, `correo2`, `descripcion2`, `foto2`) VALUES ('$nombre1','$correo1','$descripcion1', '$destinoFoto1','$nombre2','$correo2','$descripcion2', '$destinoFoto2')";
 if (mysqli_query($conexion, $consulta)) {
 
 } else {
