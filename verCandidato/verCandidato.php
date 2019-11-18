@@ -12,6 +12,8 @@ $consulta = "SELECT * FROM `candidatos` WHERE 1";
 $resultado = mysqli_query($conexion, $consulta);
 $columna = mysqli_fetch_array( $resultado );
 
+$consulta = "SELECT * FROM `candidatos` WHERE ID =1";
+$resultado = mysqli_query($conexion, $consulta);
 $numeroOpcion = 1;
 
 ?>
@@ -24,44 +26,56 @@ $numeroOpcion = 1;
 	<link rel="stylesheet" type="text/css" href="../estilos.css">
 </head>
 <body>
-	<center>
-	<table id="estiloSombra">
-		<tr id="general" align="center">
-			<td id="error" align="center">
-				<p id="titulos">Tarjetón # <?php echo $numeroOpcion; ?> </p>
-				<p id="titulos">
-					<?php echo $columna['nombre1']." y ".$columna['nombre2'] ?>
+	<center><img src="../imagenes/ver.png" id="hins"></center>
+
+	<?php
+
+	$consulta = "SELECT * FROM `candidatos` WHERE 1";
+	$resultado = mysqli_query($conexion, $consulta);
+	while ($columna = mysqli_fetch_array( $resultado ))
+	{
+
+		echo "<center>
+	<table id='estiloSombraFormulario' >
+		<tr id='general' align='center'>
+			<td id='error' align='center'>
+				<p id='titulos'>Tarjetón # ".$columna['ID']."</p>
+				<p id='textos'>
+					".$columna['nombre1']." y ".$columna['nombre2']."
 				</p>
-				<table id="home" align="center">
-					<tr id="general" align="center">
-						<td id="mitad" align="center">
-							<p id="textos"><strong><?php echo $columna['nombre1'] ?></strong></p>
-							<p id="textos"><?php echo $columna['correo1'] ?></p>
-							<?php echo "<img src='".$columna['foto1']."' width='100%'></img>";
-							?>
-							<p id="textos"><?php echo $columna['descripcion1'] ?></p>
+				<table id='home' align='center'>
+					<tr id='general' align='center'>
+						<td id='mitad' align='center'>
+							<p id='textos'><strong>".$columna['nombre1']."</strong></p>
+							<p id'textos'>".$columna['correo1']."</p>
+							<img src='".$columna['foto1']."' width='100%'></img>
+							<p id='textos'>".$columna['descripcion1']."</p>
 						</td>
-						<td id="mitad">
-							<p id="textos"><strong><?php echo $columna['nombre2'] ?></strong></p>
-							<p id="textos"><?php echo $columna['correo2'] ?></p>
-							<?php echo "<img src='".$columna['foto2']."' width='100%'></img>";
-							?>
-							<p id="textos"><?php echo $columna['descripcion2'] ?></p>
+						<td id='mitad'>
+							<p id='textos'><strong>".$columna['nombre2']."</strong></p>
+							<p id='textos'>".$columna['correo2']."</p>
+							<img src='".$columna['foto2']."' width='100%'></img>
+							<p id='textos'".$columna['descripcion2']."</p>
 						</td>
 					</tr>
 				</table>
 			</td>
 		</tr>
-		<tr id="general" align="center">
-			<td id="error" align="center">
-				<p id="textos">Plan de Gobierno</p>
-				<center><img src="../imagenes/pdf.png" id="pdf"></center>
-				<?php echo "<a href='".$columna['plan']."' download=PlanDeGobierno>Descargar Plan de Gobierno
-				</a>" ?>
+		<tr id='general' align='center'>
+			<td id='error' align='center'>
+				<p id='textos'>Plan de Gobierno</p>
+				<center><img src='../imagenes/pdf.png' id='pdf'></center>
+				<a href='".$columna['plan']."' download=PlanDeGobierno.pdf>Descargar Plan de Gobierno
+				</a>
 			</td>
 		</tr>
 	</table>
-	</center>
+	</center>";			
+	}
+	?>
+
+	
+
 
 	<center><p id="textos"><a href="../index.html">Volver al inicio</a></p></center>
 </body>
