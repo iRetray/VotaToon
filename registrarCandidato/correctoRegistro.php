@@ -14,7 +14,14 @@ $foto2 = $_POST['foto2'];
 
 $plan = $_POST['plan'];
 
-htmlspecialchars($texto);
+$consulta = "INSERT INTO `candidatos`(`nombre1`, `correo1`, `descripcion1`, `foto1`, `nombre2`, `correo2`, `descripcion2`, `foto2`, `plan`) VALUES ('$nombre1','$correo1','$descripcion1','$foto1','$nombre2','$correo2','$descripcion2','$foto2','$plan')";
+if (mysqli_query($conexion, $consulta)) {
+
+} else {
+      echo "Error: " . $consulta . "<br>" . mysqli_error($conexion);
+}
+
+
 ?>
 <!DOCTYPE html>
 <html>
