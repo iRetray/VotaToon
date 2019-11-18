@@ -23,6 +23,19 @@ table#estiloSombra {
 	box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
 }
 
+table#estiloSombraFormulario {
+  width: 60%;
+  align-content: center;
+  padding: 20px;
+  margin: 15px;
+  background-color: white;
+  border-radius: 20px;
+
+  -webkit-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
+  -moz-box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
+  box-shadow: 4px 0px 25px 0px rgba(0,0,0,0.62);
+}
+
 table#estiloSombratransparente {
   width: 95%;
   align-content: center;
@@ -40,6 +53,10 @@ table#home {
 
 img#header {
   width: 40%;
+}
+
+img#hins {
+  width: 80%;
 }
 
 img#calendario {
