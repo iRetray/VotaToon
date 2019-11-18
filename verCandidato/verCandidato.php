@@ -35,23 +35,17 @@ $numeroOpcion = 1;
 				<table id="home" align="center">
 					<tr id="general" align="center">
 						<td id="mitad" align="center">
-							<?php
-								require("../conexion.php");
-								$sql = mysql_query("SELECT * FROM foto1");
-								while ($res = mysql_fetch_array($sql)) {
-									echo "<img src='".$res["foto1"]."'>";
-								}
-							?>
-							
 							<p id="textos"><strong><?php echo $columna['nombre1'] ?></strong></p>
 							<p id="textos"><?php echo $columna['correo1'] ?></p>
+							<?php echo "<img src='".$columna['foto1']."' width='100%'></img>";
+							?>
 							<p id="textos"><?php echo $columna['descripcion1'] ?></p>
 						</td>
 						<td id="mitad">
-
-							//imagen
 							<p id="textos"><strong><?php echo $columna['nombre2'] ?></strong></p>
 							<p id="textos"><?php echo $columna['correo2'] ?></p>
+							<?php echo "<img src='".$columna['foto2']."' width='100%'></img>";
+							?>
 							<p id="textos"><?php echo $columna['descripcion2'] ?></p>
 						</td>
 					</tr>
@@ -60,8 +54,10 @@ $numeroOpcion = 1;
 		</tr>
 		<tr id="general" align="center">
 			<td id="error" align="center">
-				<p id="textos">Hoja de vida</p>
-				<p><?php echo $columna['plan'] ?></p>
+				<p id="textos">Plan de Gobierno</p>
+				<center><img src="../imagenes/pdf.png" id="pdf"></center>
+				<?php echo "<a href='".$columna['plan']."' download=PlanDeGobierno>Descargar Plan de Gobierno
+				</a>" ?>
 			</td>
 		</tr>
 	</table>

@@ -8,7 +8,7 @@ $descripcion1 = $_POST['descripcion1'];
 
 $nombreFoto1 = $_FILES['foto1']['name'];
 $rutaFoto1 = $_FILES['foto1']['tmp_name'];
-$destinoFoto1 = "fotos/".$nombreFoto1;
+$destinoFoto1 = "../fotos/".$nombreFoto1;
 copy($rutaFoto1, $destinoFoto1);
 
 $nombre2 = $_POST['nombre2'];
@@ -17,12 +17,18 @@ $descripcion2 = $_POST['descripcion2'];
 
 $nombreFoto2 = $_FILES['foto2']['name'];
 $rutaFoto2 = $_FILES['foto2']['tmp_name'];
-$destinoFoto2 = "fotos/".$nombreFoto2;
+$destinoFoto2 = "../fotos/".$nombreFoto2;
 copy($rutaFoto2, $destinoFoto2);
 
+$nombrePlan = $_FILES['plan']['name'];
+$rutaPlan = $_FILES['plan']['tmp_name'];
+$destinoPlan = "../fotos/".$nombrePlan;
+copy($rutaPlan, $destinoPlan);
 
 
-$consulta = "INSERT INTO `candidatos`(`nombre1`, `correo1`, `descripcion1`, `foto1`,`nombre2`, `correo2`, `descripcion2`, `foto2`) VALUES ('$nombre1','$correo1','$descripcion1', '$destinoFoto1','$nombre2','$correo2','$descripcion2', '$destinoFoto2')";
+
+
+$consulta = "INSERT INTO `candidatos`(`nombre1`, `correo1`, `descripcion1`, `foto1`,`nombre2`, `correo2`, `descripcion2`, `foto2`, `plan`) VALUES ('$nombre1','$correo1','$descripcion1', '$destinoFoto1','$nombre2','$correo2','$descripcion2', '$destinoFoto2', '$destinoPlan')";
 if (mysqli_query($conexion, $consulta)) {
 
 } else {
