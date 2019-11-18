@@ -1,38 +1,28 @@
-<!DOCTYPE html>
+<?php
+require("../conexion.php");
+
+$consulta = "SELECT * FROM candidatos WHERE 1";
+$sql = mysqli_query($conexion, $consulta);
+?>
 <html>
 <head>
-	<title></title>
+<title>Vista de Candidatos</title>
 </head>
 <body>
 
-
-<?php
-require("../conexion.php");
-mysql_select_db('votaciones');
-$query = 'SELECT nombre1, coreo1 FROM candidatos';
-
-$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
-
+<table>
+<?
+  while($rs=mysqli_fetch_array($sql))
+  {
+    echo "<tr>"
+           ."<td>".$rs['nombre1']."</td>"
+           ."<td>".$rs['correo1']."</td>"
+           ."<td>".$rs['desarrollo']."</td>"
+           ."<td>".$rs['tlf']."</td>"
+           ."<td>".$rs['email']."</td>"
+           ."</tr>";
+  }
 ?>
-
-<table class="table table-striped">
-  	
-		<thead>
-		<tr>
-			<th>nombre1</th>
-			<th>correo1</th>
-			<th>APELLIDO</th>
-			<th>TELEFONO</th>
-			<th>ESTADIA</th>
-			<th>HABITACION</th>
-		</tr>
-		</thead>
-<?php while ($row = mysql_fetch_array($result)){?>
-	<td><?php $row['nombre1'] ?></td>
-    <td><?php $row['correo1'] ?></td> 
-    
-	
-<?php} ?>
 </table>
-</body>
-</html>
+
+</body> 
