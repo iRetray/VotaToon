@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8"/>
-	<title>VotaToon</title>
-	<link rel="stylesheet" type="text/css" href="../estilos.css">
+	<title></title>
 </head>
-<body class="bodyStyle">
-	<center>
-	<table id="estiloSombra" align="center">
-		<tr id="general" align="center">
-			<td id="error">
-				<img src="../imagenes/ver.png" id="hins">
-				<p id="textos">Los candidatos registrados para las <strong>votaciones en tu institucion</strong> podran ser analizados a continuación.<br></p>
-				
-				<p id="textos"><a href="../index.html">Volver al inicio</a></p>
-			</td>
-		</tr>	
-	</table>
-	</center>
+<body>
+
+
+<?php
+require("../conexion.php");
+mysql_select_db('votaciones');
+$query = 'SELECT nombre1, coreo1 FROM candidatos';
+
+$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+
+?>
+
+<table class="table table-striped">
+  	
+		<thead>
+		<tr>
+			<th>nombre1</th>
+			<th>correo1</th>
+			<th>APELLIDO</th>
+			<th>TELEFONO</th>
+			<th>ESTADIA</th>
+			<th>HABITACION</th>
+		</tr>
+		</thead>
+<?php while ($row = mysql_fetch_array($result)){?>
+	<td><?php $row['nombre1'] ?></td>
+    <td><?php $row['correo1'] ?></td> 
+    
+	
+<?php} ?>
+</table>
 </body>
 </html>
