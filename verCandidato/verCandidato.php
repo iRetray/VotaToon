@@ -10,9 +10,10 @@
 	<table id="estiloSombra" align="center">
 		<tr id="general" align="center">
 			<td id="error">
-				<p id="titulos">Candidatos</p>
-				<img src="../imagenes/ver.png" id="header">
-				<p id="textos">No hay ninguna votacion activa para que puedas registrar tu perfil de personero. Comunicate con el administrador de tu institucion para que cree una votacion.<br><a href="../index.html">Volver al inicio</a></p>
+				<img src="../imagenes/ver.png" id="hins">
+				<p id="textos">Los candidatos registrados para las <strong>votaciones en tu institucion</strong> podran ser analizados a continuación.<br></p>
+				
+				<p id="textos"><a href="../index.html">Volver al inicio</a></p>
 			</td>
 		</tr>	
 	</table>
