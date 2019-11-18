@@ -17,31 +17,31 @@
 				<p id="textos">Bienvenidos al <strong>formulario de inscripciones</strong> para candidatos.<br><br>Para poder <strong>ser elegidos</strong> el dia de las elecciones, deben <strong>registrar sus perfiles correspondientes</strong> <i>(niño y niña)</i>. <br><br>Recuerda completar <strong>todos los datos</strong>, incluyendo <strong>nombre, correo, descripción personal, foto y plan de gobierno en formato PDF.</strong></p>
 			</td>
 		</tr>
-		<form method="post" action="" id="formNiño">
+		<form method="post" action="correctoRegistro.php" id="formNiño">
 		<tr id="general" align="center" bgcolor="#b2b2ff">
 			<td id="error">
 				<p id="textos">Datos del Niño candidato</p>				
-				<input type="text" name="nombre1" id="texto" placeholder="Nombre Completo">
-				<input type="email" name="correo1" id="texto" placeholder="Correo electronico">
+				<input type="text" name="nombre1" id="texto" placeholder="Nombre Completo" required="true">
+				<input type="email" name="correo1" id="texto" placeholder="Correo electronico" required="true">
 				<br>
 				<br>
 				<textarea name="descripcion1" form="formNiño">Descripcion del candidato</textarea>
 				<br>
 				<p id="textos">Foto del candidato</p>	
-				<input type="file" accept="image/*" name="foto1" id="texto" placeholder="Foto del candidato">
+				<input type="file" accept="image/*" name="foto1" id="texto" placeholder="Foto del candidato" required="true"> 
 			</td>
 		</tr>
 		<tr id="general" align="center" bgcolor="#FFC0CB">
 			<td id="error">
 				<p id="textos">Datos de la Niña candidata</p>				
-				<input type="text" name="nombre2" id="texto" placeholder="Nombre Completo">
-				<input type="email" name="correo2" id="texto" placeholder="Correo electronico">
+				<input type="text" name="nombre2" id="texto" placeholder="Nombre Completo" required="true">
+				<input type="email" name="correo2" id="texto" placeholder="Correo electronico" required="true">
 				<br>
 				<br>
 				<textarea name="descripcion2" form="formNiño">Descripcion de la candidata</textarea>
 				<br>
 				<p id="textos">Foto de la candidata</p>	
-				<input type="file" accept="image/*" name="foto2" id="texto" placeholder="Foto del candidato">
+				<input type="file" accept="image/*" name="foto2" id="texto" placeholder="Foto del candidato" required="true">
 				
 			</td>
 		</tr>
@@ -49,7 +49,7 @@
 			<td id="error">
 				<center>
 					<p id="textos">Plan de Gobierno</p>
-				<input type="file" accept="application/pdf, application/msword" name="plan" id="texto"></center>
+				<input type="file" accept="application/pdf, application/msword" name="plan" id="texto" required="true"></center>
 			</td>
 		</tr>
 		<tr align="center">
