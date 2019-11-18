@@ -17,7 +17,7 @@
 				<p id="textos">Bienvenidos al <strong>formulario de inscripciones</strong> para candidatos.<br><br>Para poder <strong>ser elegidos</strong> el dia de las elecciones, deben <strong>registrar sus perfiles correspondientes</strong> <i>(niño y niña)</i>. <br><br>Recuerda completar <strong>todos los datos</strong>, incluyendo <strong>nombre, correo, descripción personal, foto y plan de gobierno en formato PDF.</strong></p>
 			</td>
 		</tr>
-		<form method="post" action="correctoRegistro.php" id="formNiño">
+		<form method="post" action="correctoRegistro.php" id="formNiño" enctype="multipart/form-data">
 		<tr id="general" align="center" bgcolor="#b2b2ff">
 			<td id="error">
 				<p id="textos">Datos del Niño candidato</p>				
