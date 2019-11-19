@@ -11,25 +11,38 @@ switch ($accion) {
 		$sentenciaSQL = $pdo->prepare("INSERT INTO eventos(title,descripcion,start,endi,color,textColor) VALUES(:title,:descripcion,:start,:endi,:color,:textColor)");
 
 		$respuesta=$sentenciaSQL->execute(array(
-			"title"=>"t",
-			"descripcion"=>"d",
-			"start"=>'2019-11-24 10:30:00',
-			"endi"=>'2019-11-24 10:30:00',
-			"color"=>'#FF0000',
-			"textColor"=>'#FFFFFF'
+			"title"=> $_POST['title'],
+			"descripcion"=>$_POST['descripcion'],
+			"start"=>$_POST['start'],
+			"endi"=>$_POST['endi'],
+			"color"=>$_POST['color'],
+			"textColor"=>$_POST['textColor']
 		));
-
-
+		echo json_encode($respuesta);
 
 		break;
+
 	case 'eliminar':
 		//Instrucción de eliminar
-		echo "Instrucción eliminar";
+		//echo "Instrucción eliminar";
+		$respuesta=false;
+
+		if(isset($_POST['id'])){
+
+			$sentenciaSQL= $pdo->prepare("DELETE FROM eventos WHERE ID=:ID");
+			$respuesta= $sentenciaSQL->execute(array("ID"=>$_POST['id']));
+
+		}
+		echo json_encode($respuesta);
+
+
 		break;
+
 	case 'modificar':
 		//Instrucción de modificar
 		echo "Instrucción modificar";		
 		break;
+
 	default:
 		
 		//Selecciona los eventos del calendario
