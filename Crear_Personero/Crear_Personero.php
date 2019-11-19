@@ -11,8 +11,6 @@
 <div align="center">
 <img src="../imagenes/headerLastR.png" id="header" align="center">
 </div>
-
-<button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
 <div>
 	<table id="estiloSombra" align="center">
 		<tr id="general" align="center">

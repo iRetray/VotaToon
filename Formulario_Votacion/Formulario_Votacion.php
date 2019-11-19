@@ -55,8 +55,9 @@
 				</table>
 			</td>
 			<td id='error' align='center'>
-				<br>
-				<button type='button' class='btn btn-success'>YO VOTO POR EL EQUIPO # ".$columna['ID']."</button>
+			<form action='Votacion_correcta.php' method='post'>
+				<p><input type='submit' value='YO VOTO POR EL EQUIPO # ".$columna['ID']."' class='btn btn-success'></p>
+				</form>
 			</td>
 		</tr>
 	</table>
