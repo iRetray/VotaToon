@@ -1,11 +1,9 @@
 <?php  
 include('../conexion.php');
-	$servidor = "localhost";
-	$baseDeDatos = "votaciones";
-	$conexion = mysqli_connect($servidor, $usuarioDB, $contraseña, $baseDeDatos)
-	or die ("Error al conectar al servidor"); 
-	$db = mysqli_select_db($conexion, $baseDeDatos)
-	or die ("Eror al conectar a la BD");
+		
+	$conexion = mysqli_connect($servidor, $usuarioDB, $contraseña, $baseDeDatos)or die ("Error al conectar al servidor"); 
+
+	$db = mysqli_select_db($conexion, $baseDeDatos)	or die ("Eror al conectar a la BD");
 
 	$consulta = "SELECT * FROM `candidatos` WHERE 1";
 	$resultado = mysqli_query($conexion, $consulta);
