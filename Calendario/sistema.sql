@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-11-2019 a las 05:58:59
+-- Tiempo de generación: 19-11-2019 a las 21:46:58
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -37,6 +37,16 @@ CREATE TABLE `eventos` (
   `color` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `textColor` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `eventos`
+--
+
+INSERT INTO `eventos` (`id`, `title`, `descripcion`, `start`, `endi`, `color`, `textColor`) VALUES
+(1, 'Evento 1', 'Inicio de inscripción de los candidatos.', '2019-11-04 07:00:00', '2019-11-04 07:00:00', '#f31709', 'white'),
+(2, 'Evento 2', 'Fin de inscripción de los candidatos.', '2019-11-15 17:00:00', '2019-11-15 17:00:00', '#f31709', 'white'),
+(3, 'Evento 3', 'Día de las elecciones.', '2019-11-18 07:00:00', '2019-11-18 16:00:00', '#0970f3', 'white'),
+(4, 'Evento 4', 'Resultados de las votaciones.', '2019-11-20 07:00:00', '2019-11-20 17:00:00', '#28b821', 'white');
 
 --
 -- Índices para tablas volcadas
