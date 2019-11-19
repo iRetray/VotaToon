@@ -4,6 +4,7 @@ include('../conexion.php');
 
 $tarjeton = $$_POST['tarjeton']
 $consulta = "SELECT * FROM `` WHERE 1";
+$consulta = "SELECT * FROM `resultados` WHERE 1";
 $resultado = mysqli_query($conexion, $consulta);
 $columna = mysqli_fetch_array( $tarjeton );
 $nombre1 = $_POST['nombre1'];
