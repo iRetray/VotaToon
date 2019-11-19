@@ -1,6 +1,4 @@
 <?php  
-	$usuarioDB = "root";
-	$contraseña = "";
 	$servidor = "localhost";
 	$baseDeDatos = "votaciones";
 	$conexion = mysqli_connect($servidor, $usuarioDB, $contraseña, $baseDeDatos)
