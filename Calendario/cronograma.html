@@ -82,17 +82,32 @@
               </div>
               <div class="modal-body">
 
-                Id: <input type="text" id="txtID" name="txtID"><br/>
+                <input type="hidden" id="txtID" name="txtID"><br/>
 
-                Fecha: <input type="text" id="txtFecha" name="txtFecha"/><br/>
+                <input type="hidden" id="txtFecha" name="txtFecha"/>
 
-                Título: <input type="text" id="txtTitulo"><br/>
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                      <label>Título del evento:</label>
+                      <input type="text" id="txtTitulo" class="form-control" placeholder="Título del Evento">
+                  </div>
 
-                Hora:<input type="text" id="txtHora" value="10:30"/><br/>
+                  <div class="form-group col-md-4">
+                      <label>Hora del evento:</label>
+                      <input type="text" id="txtHora" value="10:30" class="form-control"/>
+                  </div>                  
+                  
+                </div>
 
-                Descripción:<textarea id="txtDescripcion" rows="3"></textarea><br/>
+                <div class="form-group">
+                    <label>Descripción del evento:</label>
+                    <textarea id="txtDescripcion" rows="3" class="form-control"></textarea>
+                </div>
 
-                Color:<input type="Color" value="#ff0000" id="txtColor"><br/>
+                <div class="form-group">
+                    <label>Color:</label>
+                    <input type="Color" value="#ff0000" id="txtColor" class="form-control" style="height:36px">
+                </div>
 
 
 
