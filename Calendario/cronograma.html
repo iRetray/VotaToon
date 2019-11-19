@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
    <head>
-       <meta charset="utf-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-       <title>CALENDARIO</title>
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-       <script src="js/jquery.min.js"></script>
-       <script src="js/moment.min.js"></script>
-       
-       <link rel="stylesheet" href="css/fullcalendar.min.css">
-       <script src="js/fullcalendar.min.js"></script>
-       <script src="js/es.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>CALENDARIO</title>
+      <link rel="stylesheet" href="../estilos.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <script src="js/jquery.min.js"></script>
+      <script src="js/moment.min.js"></script>
 
-       <script src="js/bootstrap-clockpicker.js"></script>
-       <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
-       
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="css/fullcalendar.min.css">
+      <script src="js/fullcalendar.min.js"></script>
+      <script src="js/es.js"></script>
+
+      <script src="js/bootstrap-clockpicker.js"></script>
+      <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+      <style>
         
+          .fc th{
+            padding: 10px 0px;
+            vertical-align: middle;
+            background: #e21c0f;
+          }
+
+          h2{
+            font-family: 'Roboto Mono', monospace;
+            font-size: 35px;
+            text-transform: uppercase;
+          }
+
+      </style>
+
    </head>
    <body>
      <div class="container">
@@ -39,7 +56,8 @@
                         right:'month, basicWeek, basicDay, agendaWeek, agendaDay'
                     },
                     dayClick: function(date,jsEvent,view){
-                        
+
+                        limpiarFormulario();                     
                         $('#txtFecha').val(date.format());
                         $("#ModalEventos").modal();
                         
@@ -99,7 +117,7 @@
                       <label>Hora del evento:</label>
 
                       <div class="input-groupo clockpicker" data-autoclose="true">
-                          <input type="text" id="txtHora" value="10:30" class="form-control"/>          
+                          <input type="text" id="txtHora" value="00:00" class="form-control"/>          
                       </div>
                       
                   </div>                  
@@ -184,6 +202,14 @@
           }
 
           $('.clockpicker').clockpicker();
+          function limpiarFormulario(){
+
+            $('#txtID').val('');
+            $('#txtTitulo').val('');
+            $('#txtColor').val('');
+            $('#txtDescripcion').val('');
+
+          }
 
         </script>
        
