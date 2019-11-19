@@ -6,6 +6,8 @@ $pdo=new PDO("mysql:dbname=sistema;host=127.0.0.1","root","12345678");
 
 $accion = (isset($_GET['accion']))?$_GET['accion']:'leer';
 switch ($accion) {
+
+
 	case 'agregar':
 		//Instrucción de agregar
 		$sentenciaSQL = $pdo->prepare("INSERT INTO eventos(title,descripcion,start,endi,color,textColor) VALUES(:title,:descripcion,:start,:endi,:color,:textColor)");
@@ -21,6 +23,7 @@ switch ($accion) {
 		echo json_encode($respuesta);
 
 		break;
+
 
 	case 'eliminar':
 		//Instrucción de eliminar
@@ -40,7 +43,27 @@ switch ($accion) {
 
 	case 'modificar':
 		//Instrucción de modificar
-		echo "Instrucción modificar";		
+		$sentenciaSQL= $pdo->prepare("UPDATE eventos SET 
+			title=:title,
+			descripcion=:descripcion,
+			start=:start,
+			endi=:endi,
+			color=:color,
+			textColor=:textColor			
+			WHERE ID=:ID");
+
+		$respuesta=$sentenciaSQL->execute(array(
+			"ID"=>$_POST['id'],
+			"title"=> $_POST['title'],
+			"descripcion"=>$_POST['descripcion'],
+			"start"=>$_POST['start'],
+			"endi"=>$_POST['endi'],
+			"color"=>$_POST['color'],
+			"textColor"=>$_POST['textColor']
+		));
+		echo json_encode($respuesta);
+
+
 		break;
 
 	default:
