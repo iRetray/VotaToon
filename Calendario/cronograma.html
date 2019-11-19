@@ -12,6 +12,9 @@
        <link rel="stylesheet" href="css/fullcalendar.min.css">
        <script src="js/fullcalendar.min.js"></script>
        <script src="js/es.js"></script>
+
+       <script src="js/bootstrap-clockpicker.js"></script>
+       <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
        
        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -94,7 +97,11 @@
 
                   <div class="form-group col-md-4">
                       <label>Hora del evento:</label>
-                      <input type="text" id="txtHora" value="10:30" class="form-control"/>
+
+                      <div class="input-groupo clockpicker" data-autoclose="true">
+                          <input type="text" id="txtHora" value="10:30" class="form-control"/>          
+                      </div>
+                      
                   </div>                  
                   
                 </div>
@@ -175,6 +182,8 @@
 
             });
           }
+
+          $('.clockpicker').clockpicker();
 
         </script>
        
