@@ -43,7 +43,7 @@
                         
                     },    
 
-                    events:'http://localhost:10080/Calendario/eventos.php',    
+                    events:'http://localhost:10080/VotaToon/Calendario/eventos.php',
 
                     eventClick:function(calEvent,jsEvent,view){
 
@@ -101,7 +101,7 @@
                
                 <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
                 <button type="button" class="btn btn-success">Modificar</button>
-                <button type="button" class="btn btn-danger">Borrar</button>
+                <button type="button" id="btnEliminar" class="btn btn-danger">Borrar</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                 
               </div>
@@ -113,23 +113,46 @@
           var NuevoEvento;
 
           $('#btnAgregar').click(function(){
-
             RecolectarDatosGUI();
-            $('#Calendario').fullCalendar('renderEvent',NuevoEvento);
-            $("#ModalEventos").modal('toggle');
-
+            EnviarInformacion('agregar',NuevoEvento);   
           });
+          $('#btnEliminar').click(function(){
+            RecolectarDatosGUI();
+            EnviarInformacion('eliminar',NuevoEvento);   
+          });
+
 
           function RecolectarDatosGUI(){
             NuevoEvento={
               id: $('#txtID').val(),
               title: $('#txtTitulo').val(),
-              start:$('#txtFecha').val()+" "+ $('#txtHora').val(),
-              color: $('#txtColor').val(),
               descripcion:$('#txtDescripcion').val(),
-              textColor:"#FFFFFF",
+              start:$('#txtFecha').val()+" "+ $('#txtHora').val(),
               endi:$('#txtFecha').val()+" "+ $('#txtHora').val(),
+              color: $('#txtColor').val(),
+              textColor:"#FFFFFF"
+              
             };
+          }
+          function EnviarInformacion(accion,objEvento){
+            $.ajax({
+
+              type:'POST',
+              url:'http://localhost:10080/VotaToon/Calendario/eventos.php?accion='+accion,
+              data:objEvento,
+              success:function(msg){
+                if(msg){
+                  $('#Calendario').fullCalendar('refetchEvents');
+                  $("#ModalEventos").modal('toggle');
+                }
+              },
+
+              error:function(){
+                alert("Hay un error ... ");
+              }
+
+
+            });
           }
 
         </script>
