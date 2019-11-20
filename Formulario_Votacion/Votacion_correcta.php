@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 include('../conexion.php');
 
@@ -21,7 +21,7 @@ if (mysqli_query($conexion, $consulta)) {
       echo "Error: en sistema por favor vuelva a votar " . $consulta . "<br>" . mysqli_error($conexion);
 }
 
-?>
+?> -->
 <!DOCTYPE html>
 <html>
 <head>
