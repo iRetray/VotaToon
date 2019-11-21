@@ -24,10 +24,6 @@ $documento=$_POST['documento'];
 	$columna1 = mysqli_fetch_array( $valides );
 	if ($columna1["ya_voto?"]){ //Si se encuentra registrado puede votar, si no, NO!
 		if ($columna1["ya_voto?"]=='NOT') {
-			$cambioyavoto= "UPDATE votantes SET `ya_voto?` = 'YES' WHERE `identificacion` = $documento;";
-			if(mysqli_query($conexion, $cambioyavoto)){
-				echo "realizado";
-			}
 
 			while ($columna = mysqli_fetch_array( $resultado ))//Mientras haya algo, lo que sea en la columna 
 			
@@ -53,7 +49,7 @@ $documento=$_POST['documento'];
 					</td>
 					<td id='error' align='center'>
 					<form action='Votacion_correcta.php' method='post'> 
-						<p>YO VOTO POR EL EQUIPO # <input type='submit' name='equipo1' value=".$columna['ID']." class='btn btn-success'>.</p>
+						<p>YO VOTO POR EL EQUIPO # <input type='submit' name='equipo' value=".$columna['ID']." class='btn btn-success'>.</p>
 						</form>
 					</td>
 				</tr>

@@ -1,9 +1,14 @@
 <?php
 
 include('../conexion.php');
-$equipo1 =$_POST['equipo1'];
-$equipo1 = $equipo1+ 1;
-echo $equipo1;
+
+$cambioyavoto= "UPDATE votantes SET `ya_voto?` = 'YES' WHERE `identificacion` = $documento;";
+mysqli_query($conexion, $cambioyavoto);
+
+$equipo =$_POST['equipo'];
+$consulta = "UPDATE votacion SET `resultados` = (`resultados` + 1)  WHERE `tarjeton` = $equipo;";
+$resultado = mysqli_query($conexion, $consulta);
+
 ?>
 <!DOCTYPE html>
 <html>
