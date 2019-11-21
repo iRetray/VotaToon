@@ -30,23 +30,11 @@ function Footer()
 }
 }
 
-
-require 'conex.php';
-$consulta = "SELECT * FROM votos";
-$resultado = myqli->query($consulta);
-
-
-
 $pdf = new PDF();
+$pdf = AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
 //$pdf->Cell(40,10,utf8_decode('¡Ganador!'));
-
-while ($row = $resultado->fecth_assoc()) {
-	$pdf->Cell(90, 10, $row['id'],1,0,'C',0);
-}
-
-
 
 $pdf->Output();
 ?>
