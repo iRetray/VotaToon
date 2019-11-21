@@ -1,5 +1,5 @@
 <?php
-require('fpdf/fpdf.php');
+require('../ConsultarResultados/fpdf/fpdf.php');
 
 class PDF extends FPDF
 {
@@ -35,7 +35,7 @@ function Footer()
 }
 
 
-require 'cn.php';
+require '../ConsultarResultados/cn.php';
 $consulta = "SELECT * FROM votos";
 $resultado = $mysqli->query($consulta);
 
