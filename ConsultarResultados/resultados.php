@@ -12,7 +12,7 @@ function Header()
     // Movernos a la derecha
     $this->Cell(70);
     // Título
-    $this->Cell(50,10,'RESULTADOS',0,0,'C');
+    $this->Cell(50,10,'RESULTADOS TOTALES:',0,0,'C');
     // Salto de línea
     $this->Ln(20);
     
@@ -32,12 +32,12 @@ function Footer()
     $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C');
 }
 }
+
+
 require '../ConsultarResultados/cn.php';
 
 $consulta = "SELECT * FROM resultados";
 $resultado = $mysqli->query($consulta);
-
-
 
 
 $pdf = new PDF();
@@ -45,12 +45,57 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
 
+$maxVotos = 0;
+$n1='';
+$n2='';
 
 while($row = $resultado->fetch_assoc()){
+
     $pdf->Cell(70, 10, $row['nombre1'], 1, 0, 'C',0);
     $pdf->Cell(70, 10, $row['nombre2'], 1, 0, 'C',0);
     $pdf->Cell(50, 10, $row['resultados'], 1, 1, 'C',0);
+    
+
+    if ($row['resultados'] > $maxVotos) {
+        $maxVotos = $row['resultados'];
+        $n1 = $row['nombre1'];
+        $n2 = $row['nombre2'];
+    }
+        
 }
+
+
+$consulta2 = "SELECT * FROM candidatos";
+$resultado2 = $mysqli->query($consulta2);
+
+
+$pdf->Ln(10);
+$pdf->Cell(0, 10, "GANADORES DE LAS ELECCIONES: ", 0, 1, 'C',0);
+$pdf->Ln(10);
+
+while ($row = $resultado2->fetch_assoc()) {
+
+    if ($row['nombre1'] == $n1) {
+        $pdf->Cell(70, 10, $n1, 0, 0, 'C',0);
+        $pdf->Cell(70, 10, $row['foto1'], 0, 1, 'C',0);
+        $pdf->Cell(70, 10, $n2, 0, 0, 'C',0);
+        $pdf->Cell(70, 10, $row['foto1'], 0, 1, 'C',0);
+        $pdf->Cell(70, 10, $maxVotos, 0, 1, 'C',0);
+    }    
+}
+
+
+
+
+//Traer los votos máximos:
+
+
+
+//Traer fotos de los ganadores:
+
+
+
+
 
 
 
