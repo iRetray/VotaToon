@@ -2,23 +2,12 @@
 
 include('../conexion.php');
 
-$tarjeton = $_POST['tarjeton']
-$consulta = "SELECT * FROM `` WHERE 1";
+$cambioyavoto= "UPDATE votantes SET `ya_voto?` = 'YES' WHERE `identificacion` = $documento;";
+mysqli_query($conexion, $cambioyavoto);
+
+$equipo =$_POST['equipo'];
+$consulta = "UPDATE votacion SET `resultados` = (`resultados` + 1)  WHERE `tarjeton` = $equipo;";
 $resultado = mysqli_query($conexion, $consulta);
-$columna = mysqli_fetch_array( $tarjeton );
-$nombre1 = $_POST['nombre1'];
-$nombre2 = $_POST['nombre2'];
-$resultados = $_POST['resultados'];
-
-while ($columna mysqli_fetch_array( $tarjeton )) {
-	# code...
-}
-
-$consulta = "INSERT INTO `resultados`(`tarjeton`,`nombre1`, `nombre2`, `resultados`) VALUES ('$tarjeton',$nombre1','$nombre2','$resultados')";
-if (mysqli_query($conexion, $consulta)) {
-} else {
-      echo "Error: en sistema por favor vuelva a votar " . $consulta . "<br>" . mysqli_error($conexion);
-}
 
 ?>
 <!DOCTYPE html>
@@ -33,9 +22,9 @@ if (mysqli_query($conexion, $consulta)) {
 	<table id="estiloSombraFormulario" align="center">
 		<tr id="general" align="center">
 			<td id="error">
-				<p id="titulos">Incripcion creada correctamente</p>
+				<p id="titulos">Voto guardado correctamente</p>
 				<img src="../imagenes/correcto.png" id="header">
-				<p id="textos">Ha quedado inscrito en el sistema su <strong>participación como candidatos.</strong> Ahora podran ser elegidos <strong>el dia de las votaciones.</strong><br><br><a href="../index.html">Volver al inicio</a></p>
+				<p id="textos">Mil gracias, su voto ha sido guardado correctamente<br><br><a href="../index.html">Volver al inicio</a></p>
 			</td>
 		</tr>	
 	</table>
