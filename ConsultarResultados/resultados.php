@@ -1,6 +1,5 @@
 <?php
 require('../ConsultarResultados/fpdf/fpdf.php');
-
 class PDF extends FPDF
 {
 // Cabecera de página
@@ -17,11 +16,11 @@ function Header()
     // Salto de línea
     $this->Ln(20);
     
-    $this->Cell(120, 10, 'Nombre del Candidato', 1, 0, 'C',0);
-    $this->Cell(70, 10, utf8_decode('Número de votos'), 1, 1, 'C',0);
+    $this->Cell(70, 10, 'Nombre del Candidato', 1, 0, 'C',0);
+    $this->Cell(70, 10, 'Nombre del Candidato', 1, 0, 'C',0);
+    $this->Cell(50, 10, utf8_decode('Número de votos'), 1, 1, 'C',0);
     
 }
-
 // Pie de página
 function Footer()
 {
@@ -33,36 +32,28 @@ function Footer()
     $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C');
 }
 }
-
-
 require '../ConsultarResultados/cn.php';
-$consulta = "SELECT * FROM votos";
+
+$consulta = "SELECT * FROM resultados";
 $resultado = $mysqli->query($consulta);
 
-$consulta2 = "SELECT * FROM esta";
-$resultado2 = $mysqli->query($consulta2);
+
 
 
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
-//$pdf->Cell(40,10,utf8_decode('¡Hola, Mundo!'));
+
 
 while($row = $resultado->fetch_assoc()){
-    $pdf->Cell(120, 10, $row['nomCandidato'], 1, 0, 'C',0);
-    $pdf->Cell(70, 10, $row['numVotos'], 1, 1, 'C',0);
+    $pdf->Cell(70, 10, $row['nombre1'], 1, 0, 'C',0);
+    $pdf->Cell(70, 10, $row['nombre2'], 1, 0, 'C',0);
+    $pdf->Cell(50, 10, $row['resultados'], 1, 1, 'C',0);
 }
 
-
-
-while($row = $resultado2->fetch_assoc()){
-    $pdf->Cell(120, 10, $row['genero'], 1, 0, 'C',0);
-    $pdf->Cell(70, 10, $row['num_Votos'], 1, 1, 'C',0);
-}
 
 
 $pdf->Output();
 ?>
-
 
