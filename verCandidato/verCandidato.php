@@ -1,6 +1,5 @@
 <?php  
 include('../conexion.php');
-
 $consulta = "SELECT * FROM `candidatos` WHERE 1";
 $resultado = mysqli_query($conexion, $consulta);
 $columna = mysqli_fetch_array( $resultado );

@@ -1,13 +1,7 @@
 <?php  
 include('../conexion.php');
-	$consulta = "SELECT * FROM `resultados` WHERE 1";
-	$resultado = mysqli_query($conexion, $consulta);
-	$columna = mysqli_fetch_array( $resultado );
 
-	$consulta = "SELECT * FROM `candidatos` WHERE ID =1";
-	$resultado = mysqli_query($conexion, $consulta);
-	$numeroOpcion = 1;
-
+$documento=$_POST['documento'];
 ?>
 
 <!DOCTYPE html>
@@ -23,45 +17,66 @@ include('../conexion.php');
 
 	<?php
 
-	$consulta = "SELECT * FROM `candidatos` WHERE 1";
+	$consulta = "SELECT * FROM `candidatos` WHERE 1"; //realiza una consulta en el servidor localost, con el usuario root
 	$resultado = mysqli_query($conexion, $consulta);
-	while ($columna = mysqli_fetch_array( $resultado ))
-	{
+	$consultavotantehabilitado = "SELECT * FROM `votantes` WHERE (identificacion=$documento);";
+	$valides = mysqli_query($conexion, $consultavotantehabilitado);
+	$columna1 = mysqli_fetch_array( $valides );
+	if ($columna1["ya_voto?"]){ //Si se encuentra registrado puede votar, si no, NO!
+		if ($columna1["ya_voto?"]=='NOT') {
+			$cambioyavoto= "UPDATE votantes SET `ya_voto?` = 'YES' WHERE `identificacion` = $documento;";
+			if(mysqli_query($conexion, $cambioyavoto)){
+				echo "realizado";
+			}
 
-		echo "<center>
-	<table id='estiloSombraFormulario' border='1'>
-		<tr id='general' align='center'>
-			<td id='error' align='center'>
-				<p id='titulos'>Tarjetón # ".$columna['ID']. ": ".$columna['nombre1']. " y " .$columna['nombre2']."</p>
-				<table id='home' align='center' border='1'>
-					<tr id='general' align='center'>
-						<td id='mitad' align='center'>
-							<p id='textos'><strong>".$columna['nombre1']."</strong></p>
-							<img src='".$columna['foto1']."' width='100%'></img>
-						</td>
-						<td id='mitad'>
-							<p id='textos'><strong>".$columna['nombre2']."</strong></p>
-							<img src='".$columna['foto2']."' width='100%'></img>
-						</td>
-					</tr>
-				</table>
-			</td>
-			<td id='error' align='center'>
-			<form action='Votacion_correcta.php' method='post'>
-				<p><input type='submit' value='YO VOTO POR EL EQUIPO # ".$columna['ID']."' class='btn btn-success'></p>
-				</form>
-			</td>
-		</tr>
-	</table>
-	</center>";			
+			while ($columna = mysqli_fetch_array( $resultado ))//Mientras haya algo, lo que sea en la columna 
+			
+			{
 
+				echo "<center>
+			<table id='estiloSombraFormulario' border='1'>
+				<tr id='general' align='center'>
+					<td id='error' align='center'>
+						<p id='titulos'>Tarjetón # ".$columna['ID']. ": ".$columna['nombre1']. " y " .$columna['nombre2']."</p>
+						<table id='home' align='center' border='1'>
+							<tr id='general' align='center'>
+								<td id='mitad' align='center'>
+									<p id='textos'><strong>".$columna['nombre1']."</strong></p>
+									<img src='".$columna['foto1']."' width='100%'></img>
+								</td>
+								<td id='mitad'>
+									<p id='textos'><strong>".$columna['nombre2']."</strong></p>
+									<img src='".$columna['foto2']."' width='100%'></img>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td id='error' align='center'>
+					<form action='Votacion_correcta.php' method='post'> 
+						<p>YO VOTO POR EL EQUIPO # <input type='submit' name='equipo1' value=".$columna['ID']." class='btn btn-success'>.</p>
+						</form>
+					</td>
+				</tr>
+			</table>
+			</center>";			
+			}//end del while
+
+		} //end del if
+
+		else {
+	      echo "Usted ya realizó su respectiva votación ";
+		}
 	}
+	else{
+		echo "Usted no es autorizado para votar ";
+	}	
+	//msql_close($conexion);
+
 
 	?>
 
-	
-
-
 	<center><p id="textos"><a href="../index.html">Volver al inicio</a></p></center>
+
+
 </body>
 </html>

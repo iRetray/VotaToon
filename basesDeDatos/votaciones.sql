@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.9.1
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
@@ -51,10 +51,8 @@ CREATE TABLE `candidatos` (
 
 INSERT INTO `candidatos` (`ID`, `nombre1`, `correo1`, `descripcion1`, `foto1`, `nombre2`, `correo2`, `descripcion2`, `foto2`, `plan`) VALUES
 (1, 'Julian Camilo', 'juan@gmail.com', '<p>Descripcion del<strong> candidato</strong></p>', '../fotos/WhatsApp Image 2019-11-14 at 6.00.51 PM.jpeg', 'Angela', 'angela@gmail.com', '<p><em>Descripcion de la candidata</em></p>', '../fotos/Diagrama de clases UML.png', '../fotos/1_Clases_y_objetos.pdf'),
-(2, 'Brayan', 'brayan@gmail.com', '<p>Soy bien <strong>sexy</strong></p>', '../fotos/1014461.jpg', 'Retray', 'retray@hotmail.com', '<p>Y sho bien feo<em> alv :v</em></p>', '../fotos/562121.png', '../fotos/Evidencia_Clases_y_objetos.pdf');
 (2, 'Brayan', 'brayan@gmail.com', '<p>Soy bien <strong>sexy</strong></p>', '../fotos/1014461.jpg', 'Retray', 'retray@hotmail.com', '<p>Y sho bien feo<em> alv :v</em></p>', '../fotos/562121.png', '../fotos/Evidencia_Clases_y_objetos.pdf'),
-(3, 'pedro', 'pedro@hopaod.com', '<p>Descripcion del candidatoddd</p>', '../fotos/gomez_laureano.jpg', 'alejandra', 'alejandra@gopka', '<p>Descripcion de la candidatafadsf</p>', '../fotos/Bogotazo.jpg', '../fotos/GaonaEspitiaJhonnyLeonardo2016Anexo 1.pdf'),
-(11, '', '', '', '../fotos/', '', '', '', '../fotos/', '../fotos/');
+(3, 'pedro', 'pedro@hopaod.com', '<p>Descripcion del candidatoddd</p>', '../fotos/gomez_laureano.jpg', 'alejandra', 'alejandra@gopka', '<p>Descripcion de la candidatafadsf</p>', '../fotos/Bogotazo.jpg', '../fotos/GaonaEspitiaJhonnyLeonardo2016Anexo 1.pdf');
 
 -- --------------------------------------------------------
 
@@ -68,6 +66,30 @@ CREATE TABLE `resultados` (
   `nombre2` varchar(30) NOT NULL,
   `resultados` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `resultados`
+--
+
+
+--
+-- Estructura de tabla para la tabla `votantes`
+--
+
+CREATE TABLE `votantes`(
+   `Votantes_ID` INT AUTO_INCREMENT UNIQUE, 
+   `nombre` text NOT NULL,
+   `apellido` text NOT NULL,
+   `identificacion`int NOT NULL UNIQUE,
+   PRIMARY KEY (Votantes_ID)
+);
+
+--
+-- Volcado de datos para la tabla `votantes`
+--
+INSERT INTO `votantes`(`Votantes_ID`,`nombre`, `apellido`, `identificacion`) VALUES (1, 'Carlos', 'Alvarez', 12345);
+INSERT INTO `votantes`(`Votantes_ID`,`nombre`, `apellido`, `identificacion`) VALUES (2, 'Andres', 'Pelaes', 56789);
+INSERT INTO `votantes`(`Votantes_ID`,`nombre`, `apellido`, `identificacion`) VALUES (3, 'Cristian', 'Gomez', 01234);
 
 --
 -- Índices para tablas volcadas
@@ -90,6 +112,11 @@ ALTER TABLE `candidatos`
   MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
   MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
+
+--
+-- AUTO_INCREMENT de la tabla `candidatos`
+--
+ALTER TABLE Persons AUTO_INCREMENT=100;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
