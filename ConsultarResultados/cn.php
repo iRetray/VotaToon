@@ -1,3 +1,3 @@
 <?php
 
-$mysqli = new mysqli("localhost","root","12345678","resultados");
+$mysqli = new mysqli("localhost","root","12345678","votaciones");
