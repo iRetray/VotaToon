@@ -104,29 +104,29 @@
 					<br>
 					<tr id="general" align="center">
 						<td id="generalPadding">
+							
 							<p id="textos"><b>¿Estas listo para votar?</b></p>
 							<p id="textos">Ingresa tu numero de documento para completar tu formulario de votación.</p>
 						</td>
 					</tr>
-					<form method="post" action="Formulario_Votacion/Formulario_Votacion.php">
+						<form method="post" action="Formulario_Votacion/Formulario_Votacion.php">
 					<tr id="general" align="center">
-						<td id="general">
+							<td id="general">
 							<input type="number" name="documento" placeholder="Documento de Identidad" required="true" id="texto">
-
-						</td>
+							</td>
 					</tr>
 					<tr id="general" align="center">
-						<td id="general">
+							<td id="general">
 							<input type="submit" name="" value="Empezar a Votar" id="submit">
-						</td>
+							</td>
 					</tr>
 					<tr>
-						<td>
-							<br>
-							<br>
-						</td>
+							<td>
+								<br>
+								<br>
+							</td>
 					</tr>
-					</form>
+						</form>
 				</table>
 			</td>
 			<td id="right">

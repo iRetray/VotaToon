@@ -2,6 +2,7 @@
 
 include('../conexion.php');
 
+$documento =$_POST['documento'];
 $cambioyavoto= "UPDATE votantes SET `ya_voto?` = 'YES' WHERE `identificacion` = $documento;";
 mysqli_query($conexion, $cambioyavoto);
 

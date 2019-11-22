@@ -16,7 +16,7 @@
 				
 			</td>
 			<td>
-				<p id="titulos">Aqui podrá la votación</p>
+				<p id="titulos">Aqui podrá crear la votación</p>
 			</td>
 			<td id="right">
 				

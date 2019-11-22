@@ -1,7 +1,7 @@
 <?php
 include('../conexion.php');
 // Verificar que haya una votacion activa
-/*
+
 $consulta = "SELECT * FROM `votaciones` WHERE 1";
 $resultado = mysqli_query($conexion, $consulta);
 $hayVotacionActiva = false;
@@ -17,7 +17,7 @@ if ($hayVotacionActiva) {
 else{
 	header("Location:../registrar.php");
 }
-*/
+
 
 header("Location:registrar.php");
 

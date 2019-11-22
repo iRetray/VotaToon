@@ -60,17 +60,20 @@ INSERT INTO `candidatos` (`ID`, `nombre1`, `correo1`, `descripcion1`, `foto1`, `
 -- Estructura de tabla para la tabla `resultados`
 --
 
-CREATE TABLE `resultados` (
+CREATE TABLE `votacion` (
+  `tarjeton_ID` int not null, 
   `tarjeton` int(11) NOT NULL,
   `nombre1` varchar(30) NOT NULL,
   `nombre2` varchar(30) NOT NULL,
-  `resultados` int(11) NOT NULL
+  `resultados` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `resultados`
+-- Volcado de datos para la tabla `votacion`
 --
-
+INSERT INTO `votacion`(`tarjeton_ID`,`tarjeton`, `nombre1`, `nombre2`,`resultados`) VALUES (1, 'Julian Camilo', 'Angela', 0);
+INSERT INTO `votacion`(`tarjeton_ID`,`tarjeton`, `nombre1`, `nombre2`,`resultados`) VALUES (2, 'Brayan', 'Retray', 0);
+INSERT INTO `votacion`(`tarjeton_ID`,`tarjeton`, `nombre1`, `nombre2`,`resultados`) VALUES (3, 'pedro', 'Alejandra', 0);
 
 --
 -- Estructura de tabla para la tabla `votantes`
@@ -81,6 +84,7 @@ CREATE TABLE `votantes`(
    `nombre` text NOT NULL,
    `apellido` text NOT NULL,
    `identificacion`int NOT NULL UNIQUE,
+   `ya voto?` text NOT NULL DEFAULT 'NOT',
    PRIMARY KEY (Votantes_ID)
 );
 
