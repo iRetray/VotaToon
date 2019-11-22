@@ -1,58 +1,8 @@
 <?php
 require('../ConsultarResultados/lib/fpdf/fpdf.php');
-require('../ConsultarResultados/lib/jpgraph/src/jpgraph.php');
-require('../ConsultarResultados/lib/jpgraph/src/jpgraph_pie.php');
-require ('../ConsultarResultados/lib/jpgraph/src/jpgraph_pie3d.php');
+
 class PDF extends FPDF
 {
-
-    public function __construct($orientation='P', $unit='mm', $format='A4')
-    {
-        parent::__construct($orientation, $unit, $format);
-    }
-
-
-    public function gaficoPDF($datos = array(),$nombreGrafico = NULL, $ubicacionTamamo = array(),$titulo = NULL)
-    { 
-  //construccion de los arrays de los ejes x e y
-      if(!is_array($datos) || !is_array($ubicacionTamamo)){
-         echo "los datos del grafico y la ubicacion deben de ser arreglos";
-     }
-     elseif($nombreGrafico == NULL){
-         echo "debe indicar el nombre del grafico a crear";
-     }
-     else{ 
-   #obtenemos los datos del grafico  
-         foreach ($datos as $key => $value){
-            $data[] = $value[0];
-            $nombres[] = $key; 
-            $color[] = $value[1];
-        } 
-        $x = $ubicacionTamamo[0];
-        $y = $ubicacionTamamo[1]; 
-        $ancho = $ubicacionTamamo[2];  
-        $altura = $ubicacionTamamo[3];  
-   #Creamos un grafico vacio
-        $graph = new PieGraph(600,400);
-   #indicamos titulo del grafico si lo indicamos como parametro
-        if(!empty($titulo)){
-            $graph->title->Set($titulo);
-        }   
-   //Creamos el plot de tipo tarta
-        $p1 = new PiePlot3D($data);
-        $p1->SetSliceColors($color);
-   #indicamos la leyenda para cada porcion de la tarta
-        $p1->SetLegends($nombres);
-   //Añadirmos el plot al grafico
-        $graph->Add($p1);
-   //mostramos el grafico en pantalla
-        $graph->Stroke("$nombreGrafico.png"); 
-        $this->Image("$nombreGrafico.png",$x,$y,$ancho,$altura);  
-    } 
-}
-
-
-
     // Cabecera de página
     function Header()
     {
@@ -84,11 +34,6 @@ class PDF extends FPDF
         $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C');
     }
 }
-
-
-
-
-
 
 $pdf = new PDF();
 $pdf->AliasNbPages();
@@ -122,10 +67,9 @@ while($row = $resultado->fetch_assoc()){
 $consulta2 = "SELECT * FROM candidatos";
 $resultado2 = $mysqli->query($consulta2);
 
-$pdf->Ln(120);
+$pdf->Ln(50);
 $pdf->Cell(0, 10, "GANADORES DE LAS ELECCIONES: ", 0, 1, 'C',0);
 $pdf->Ln(10);
-
 
 
 while ($row = $resultado2->fetch_assoc()) {
@@ -136,10 +80,6 @@ while ($row = $resultado2->fetch_assoc()) {
         $pdf->Cell(50, 10, $maxVotos, 0, 1, 'C',0);
     }    
 }
-
-
-$pdf->gaficoPDF(array('Candidatos 1'=>array(200),'Candidatos 2'=>array(345), 'Candidatos 3'=>array(273)), 'Grafico', array(40,80,130,100),'PORCENTAJE VOTOS');
-
 
 $pdf->Output();
 ?>
